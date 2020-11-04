@@ -215,8 +215,8 @@ export default class MTableEditRow extends React.Component {
         padding="none"
         key="key-actions-column"
         style={{
-          width: 42 * actions.length,
-          padding: "0px 5px",
+          width: actions.length * CommonValues.baseIconSize(this.props),
+          padding: "16px",
           ...this.props.options.editCellStyle,
         }}
       >
@@ -278,7 +278,7 @@ export default class MTableEditRow extends React.Component {
           key="key-edit-cell"
           colSpan={colSpan}
         >
-          <Typography variant="h6">{localization.deleteText}</Typography>
+          <Typography variant="body1">{localization.deleteText}</Typography>
         </TableCell>,
       ];
     }

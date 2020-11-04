@@ -88,7 +88,7 @@ export default class MTableBodyRow extends React.Component {
         key="key-actions-column"
         style={{
           width: width,
-          padding: "0px 5px",
+          padding: "16px",
           boxSizing: "border-box",
           ...this.props.options.actionsCellStyle,
         }}

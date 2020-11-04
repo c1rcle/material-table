@@ -362,11 +362,10 @@ export class MTableToolbar extends React.Component {
         })}
       >
         {title && this.renderToolbarTitle(title)}
-        {this.props.searchFieldAlignment === "left" && this.renderSearch()}
-        {this.props.toolbarButtonAlignment === "left" && this.renderActions()}
-        <div className={classes.spacer} />
-        {this.props.searchFieldAlignment === "right" && this.renderSearch()}
-        {this.props.toolbarButtonAlignment === "right" && this.renderActions()}
+        <div className={classes.actionContainer}>
+          {this.renderSearch()}
+          {this.renderActions()}
+        </div>
       </Toolbar>
     );
   }
@@ -439,7 +438,9 @@ MTableToolbar.propTypes = {
 
 export const styles = (theme) => ({
   root: {
-    paddingRight: theme.spacing(1),
+    padding: theme.spacing(3, 1, 3, 3),
+    flexWrap: "wrap",
+    backgroundColor: "fff",
   },
   highlight:
     theme.palette.type === "light"
@@ -451,18 +452,27 @@ export const styles = (theme) => ({
           color: theme.palette.text.primary,
           backgroundColor: theme.palette.secondary.dark,
         },
-  spacer: {
-    flex: "1 1 10%",
-  },
   actions: {
     color: theme.palette.text.secondary,
+  },
+  actionContainer: {
+    display: "flex",
+    alignItems: "center",
+    marginLeft: "auto",
+    [theme.breakpoints.down("xs")]: {
+      marginTop: theme.spacing(1),
+      width: "100%",
+    },
   },
   title: {
     overflow: "hidden",
   },
   searchField: {
     minWidth: 150,
-    paddingLeft: theme.spacing(2),
+    marginRight: theme.spacing(1),
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
+    },
   },
   formControlLabel: {
     paddingLeft: theme.spacing(1),

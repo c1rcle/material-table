@@ -131,6 +131,7 @@ export default class MTableCell extends React.Component {
       fontSize: "inherit",
       fontFamily: "inherit",
       fontWeight: "inherit",
+      wordWrap: "break-word"
     };
 
     if (typeof this.props.columnDef.cellStyle === "function") {
