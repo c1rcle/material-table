@@ -5,7 +5,7 @@ export const baseIconSize = (props) =>
 export const rowActions = (props) =>
   props.actions.filter((a) => a.position === "row" || typeof a === "function");
 export const actionsColumnWidth = (props) =>
-  rowActions(props).length * baseIconSize(props);
+  rowActions(props).length * baseIconSize(props) + 32;
 export const selectionMaxWidth = (props, maxTreeLevel) =>
   baseIconSize(props) + 9 * maxTreeLevel;
 
