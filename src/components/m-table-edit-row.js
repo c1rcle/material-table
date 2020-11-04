@@ -215,8 +215,8 @@ export default class MTableEditRow extends React.Component {
         padding="none"
         key="key-actions-column"
         style={{
-          width: actions.length * CommonValues.baseIconSize(this.props),
-          padding: "16px",
+          width: actions.length * CommonValues.baseIconSize(this.props) + 32,
+          padding: "0px 16px",
           ...this.props.options.editCellStyle,
         }}
       >

@@ -80,7 +80,7 @@ export default class MTableBodyRow extends React.Component {
   renderActions() {
     const size = CommonValues.elementSize(this.props);
     const actions = CommonValues.rowActions(this.props);
-    const width = actions.length * CommonValues.baseIconSize(this.props);
+    const width = actions.length * CommonValues.baseIconSize(this.props) + 32;
     return (
       <TableCell
         size={size}
@@ -88,7 +88,7 @@ export default class MTableBodyRow extends React.Component {
         key="key-actions-column"
         style={{
           width: width,
-          padding: "16px",
+          padding: "0px 16px",
           boxSizing: "border-box",
           ...this.props.options.actionsCellStyle,
         }}
