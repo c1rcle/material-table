@@ -144,7 +144,7 @@ export default class MaterialTable extends React.Component {
     if (propsChanged) {
       const props = this.getProps(this.props);
       this.setDataManagerFields(props);
-      this.setState({ ...this.state, ...this.dataManager.getRenderState() });
+      this.setState(this.dataManager.getRenderState());
     }
 
     const count = this.isRemoteData()
