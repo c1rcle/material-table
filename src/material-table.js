@@ -1181,9 +1181,7 @@ var style = () => ({
       height: 8,
     },
     "& ::-webkit-scrollbar-thumb": {
-      borderRadius: 4,
-      border: "2px solid white",
-      backgroundColor: "rgba(0, 0, 0, .3)",
+      backgroundColor: "rgba(0, 0, 0, .2)",
     },
   },
 });
