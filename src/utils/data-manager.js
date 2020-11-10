@@ -1,4 +1,6 @@
 import formatDate from "date-fns/format";
+import equal from "fast-deep-equal";
+import omit from "lodash/omit";
 import { byString } from "./";
 
 export default class DataManager {
@@ -50,7 +52,13 @@ export default class DataManager {
 
     this.data = data.map((row, index) => {
       const savedRow = this.data.find((x) => x.id === row.id);
-      const tableData = { ...(savedRow && savedRow.tableData), id: index };
+      const rowsEqual = equal(omit(savedRow, ["tableData"]), row);
+
+      const tableData = {
+        ...(savedRow && rowsEqual && savedRow.tableData),
+        id: index,
+      };
+
       if (tableData.checked) {
         this.selectedCount++;
       }
