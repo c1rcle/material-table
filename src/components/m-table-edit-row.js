@@ -241,16 +241,6 @@ export default class MTableEditRow extends React.Component {
     return style;
   }
 
-  handleKeyDown = (e) => {
-    if (e.keyCode === 13 && e.target.type !== "textarea") {
-      this.handleSave();
-    } else if (e.keyCode === 13 && e.target.type === "textarea" && e.shiftKey) {
-      this.handleSave();
-    } else if (e.keyCode === 27) {
-      this.props.onEditingCanceled(this.props.mode, this.props.data);
-    }
-  };
-
   render() {
     const size = CommonValues.elementSize(this.props);
     const localization = {
@@ -366,11 +356,7 @@ export default class MTableEditRow extends React.Component {
 
     return (
       <>
-        <TableRow
-          onKeyDown={this.handleKeyDown}
-          {...rowProps}
-          style={this.getStyle()}
-        >
+        <TableRow {...rowProps} style={this.getStyle()}>
           {columns}
         </TableRow>
       </>
