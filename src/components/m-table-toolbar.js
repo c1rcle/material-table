@@ -317,7 +317,7 @@ export class MTableToolbar extends React.Component {
     const toolBarTitle =
       typeof title === "string" ? (
         <Typography
-          variant="h6"
+          variant="h5"
           style={{
             whiteSpace: "nowrap",
             overflow: "hidden",
